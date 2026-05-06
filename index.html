@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Estatuto Digital | URE - Caieiras | Lei 15.211/2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #0a2f6c 0%, #041a3a 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #212121;
+        }
+        :root {
+            --azul-escuro: #0a2f6c;
+            --azul-claro: #eef3fb;
+            --vermelho: #d32f2f;
+            --branco: #ffffff;
+            --preto: #212121;
+            --cinza-borda: #e0e4e9;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #0f1a24;
+            border-radius: 48px;
+            padding: 20px;
+            box-shadow: 0 30px 35px rgba(0,0,0,0.5), inset 0 1px 4px rgba(255,255,200,0.1);
+            border: 1px solid var(--vermelho);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0a2f6ccc;
+            backdrop-filter: blur(4px);
+            padding: 12px 24px;
+            border-radius: 60px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            background: var(--vermelho);
+            width: 48px;
+            height: 48px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .logo-area span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffec9e;
+        }
+        .title-badge {
+            background: var(--vermelho);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--branco);
+            border-left: 6px solid var(--vermelho);
+            padding-left: 1rem;
+            margin: 1rem 0 1.2rem 0;
+        }
+        .card {
+            background: var(--branco);
+            border-radius: 32px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            border: 1px solid var(--cinza-borda);
+        }
+        .info-box {
+            background: var(--azul-claro);
+            border-left: 5px solid var(--vermelho);
+            padding: 1rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+        }
+        .info-box p {
+            color: var(--preto);
+            line-height: 1.4;
+        }
+        .tabs-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            background: transparent;
+        }
+        .tab-btn {
+            background: rgba(255,255,240,0.1);
+            backdrop-filter: blur(4px);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.2s;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tab-btn i {
+            font-size: 1rem;
+        }
+        .tab-btn.active {
+            background: var(--vermelho);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .tab-btn:hover:not(.active) {
+            background: rgba(255,255,255,0.25);
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.25s ease;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .subsection-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 1.5rem 0 1rem 0;
+            color: var(--azul-escuro);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid #eef2ff;
+            padding-bottom: 5px;
+        }
+        .exemplo-card {
+            background: #fef9e6;
+            border-left: 5px solid #f4a261;
+            padding: 1rem 1.2rem;
+            border-radius: 20px;
+            margin: 1rem 0;
+        }
+        .exemplo-card strong {
+            color: #c4450c;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .badge-lei {
+            background: #e6f0fa;
+            color: var(--azul-escuro);
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .grid-dois {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+        .link-footer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .link-btn:hover {
+            background: var(--vermelho);
+            transform: translateY(-2px);
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            color: #b4c8e0;
+            font-size: 0.8rem;
+            border-top: 1px solid #2c4c6e;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 12px; }
+            h2 { font-size: 1.4rem; }
+            .tab-btn { padding: 0.5rem 1rem; font-size: 0.8rem; }
+            .subsection-title { font-size: 1.2rem; }
+        }
+        @media print {
+            body { background: white; padding: 0; }
+            .container { background: white; border: none; box-shadow: none; }
+            .header, .tabs-nav, button, .link-footer, footer { display: none; }
+            .tab-content { display: block !important; }
+            .card { box-shadow: none; border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo-area">
+            <div class="logo-icon">URE</div>
+            <span>Unidade Regional de Ensino - Caieiras • Estatuto Digital da Criança e do Adolescente</span>
+        </div>
+        <div class="title-badge"><i class="fas fa-shield-haltered"></i> Lei nº 15.211/2025</div>
+    </div>
+
+    <!-- Abas principais do Estatuto Digital -->
+    <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="geral"><i class="fas fa-gavel"></i> Visão Geral</button>
+        <button class="tab-btn" data-tab="privacidade"><i class="fas fa-lock"></i> Privacidade & Dados</button>
+        <button class="tab-btn" data-tab="parental"><i class="fas fa-family"></i> Supervisão Parental</button>
+        <button class="tab-btn" data-tab="jogos"><i class="fas fa-gamepad"></i> Jogos, Redes & Publicidade</button>
+        <button class="tab-btn" data-tab="idade"><i class="fas fa-id-card"></i> Verificação de Idade</button>
+        <button class="tab-btn" data-tab="denuncia"><i class="fas fa-flag"></i> Denúncias & Remoção</button>
+        <button class="tab-btn" data-tab="escola"><i class="fas fa-school"></i> Escola na Prática</button>
+    </div>
+
+    <!-- ABA 1 - VISÃO GERAL -->
+    <div id="geral" class="tab-content active">
+        <h2>🔒 Estatuto Digital: proteção integral também no ambiente virtual</h2>
+        <div class="card">
+            <div class="badge-lei"><i class="fas fa-calendar-alt"></i> Vigência: 17 de março de 2026</div>
+            <p><strong>A Lei nº 15.211/2025</strong> dispõe sobre a proteção de crianças e adolescentes em ambientes digitais. Aplica-se a produtos, serviços de tecnologia (apps, redes sociais, jogos, sistemas operacionais) direcionados ou de <strong>acesso provável</strong> por crianças e adolescentes no Brasil. Prioriza o <strong>melhor interesse</strong>, a proteção integral (ECA + LGPD) e o direito à educação digital.</p>
+            <div class="exemplo-card">
+                <strong><i class="fas fa-chalkboard"></i> Exemplo prático na escola:</strong> A URE Caieiras pode orientar que plataformas usadas em atividades pedagógicas (Google Sala de Aula, Khan Academy, jogos educativos) adotem configurações que priorizem a privacidade e bloqueiem conteúdos impróprios, respeitando o art. 3º da lei.
+            </div>
+            <div class="subsection-title"><i class="fas fa-balance-scale"></i> Fundamentos (art. 4º)</div>
+            <ul style="margin-left: 1.5rem; line-height: 1.5;">
+                <li>Proteção integral e prevalência absoluta dos interesses da criança/adolescente;</li>
+                <li>Condição peculiar de pessoa em desenvolvimento biopsicossocial;</li>
+                <li>Segurança contra intimidação virtual (cyberbullying), abuso e violência;</li>
+                <li>Proteção contra exploração comercial e respeito à autonomia progressiva;</li>
+                <li>Transparência e responsabilidade no tratamento de dados pessoais.</li>
+            </ul>
+            <div class="exemplo-card">
+                <strong><i class="fas fa-users"></i> Para a comunidade escolar:</strong> Promover rodas de conversa sobre o direito à desconexão e ao uso saudável da tecnologia, alinhado ao art. 5º (saúde mental e física).
+            </div>
+        </div>
+    </div>
+
+    <!-- ABA 2 - PRIVACIDADE E DADOS -->
+    <div id="privacidade" class="tab-content">
+        <h2>🔐 Privacidade desde o padrão + fim do perfilamento infantil</h2>
+        <div class="card">
+            <p><strong>Art. 7º</strong> – Configuração padrão no modelo mais protetivo disponível em relação à privacidade e proteção de dados. <strong>Art. 22</strong> – Vedado o perfilamento para direcionamento de publicidade comercial a crianças e adolescentes, incluindo análise emocional ou realidade aumentada.</p>
+            <div class="grid-dois">
+                <div class="exemplo-card">
+                    <strong>📱 Nas escolas:</strong> Professores podem ensinar os alunos a verificar as configurações de privacidade em aplicativos (YouTube, TikTok) ativando o modo restrito e desativando anúncios personalizados.
+                </div>
+                <div class="exemplo-card">
+                    <strong>⚙️ Com as famílias:</strong> Orientações em reuniões de pais para que revisem permissões de apps infantis – nunca compartilhar localização ou microfone sem necessidade (art. 7º §2º).
+                </div>
+            </div>
+            <h4 style="margin-top: 1rem;">Proibição de criação de perfis comportamentais (art. 26)</h4>
+            <p>Empresas não podem coletar dados de crianças para traçar perfis com fins de publicidade. Exemplo: um jogo educativo não pode vender informações sobre hábitos do aluno para anunciantes.</p>
+            <div class="exemplo-card">
+                <strong>🏫 Prática URE:</strong> Realizar uma oficina de "rastros digitais" com alunos do 6º ao 9º ano, mostrando como empresas coletam dados e como ativar a opção "não compartilhar para marketing".
+            </div>
+        </div>
+    </div>
+
+    <!-- ABA 3 - SUPERVISÃO PARENTAL -->
+    <div id="parental" class="tab-content">
+        <h2>👨‍👩‍👧 Ferramentas de supervisão parental obrigatórias</h2>
+        <div class="card">
+            <p>Os fornecedores de produtos e serviços digitais devem disponibilizar <strong>mecanismos de supervisão parental</strong> (arts. 16-18), permitindo limitar tempo de tela, restringir compras, bloquear contatos indesejados e monitorar o uso de forma transparente. Por padrão, o nível de proteção deve ser o mais alto.</p>
+            <div class="grid-dois">
+                <div class="exemplo-card">
+                    <strong>⏱️ Limitar tempo de uso:</strong> Pais configuram, via sistema operacional ou app, que a criança use até 1h30 por dia em redes sociais, com bloqueio automático.
+                </div>
+                <div class="exemplo-card">
+                    <strong>🛑 Restrição de compras:</strong> Ferramenta impede qualquer transação financeira sem autorização do responsável via senha ou biometria (art. 18, II).
+                </div>
+            </div>
+            <div class="exemplo-card">
+                <strong>📌 Ação na comunidade escolar:</strong> Elaborar um guia passo a passo (impresso e digital) ensinando pais e responsáveis a ativar o controle parental no Android, iOS, Windows e nos principais aplicativos (Instagram, Kwai, Discord). Distribuir via grupos de WhatsApp e no mural da URE.
+            </div>
+            <p><strong>Art. 18 §2º</strong> – É vedado ao fornecedor projetar interfaces que induzam a criança a desativar salvaguardas. Exemplo: botões confusos que desabilitam o modo restrito.</p>
+        </div>
+    </div>
+
+    <!-- ABA 4 - JOGOS, REDES SOCIAIS E PUBLICIDADE -->
+    <div id="jogos" class="tab-content">
+        <h2>🎮 Jogos sem loot boxes, redes com vínculo parental e publicidade ética</h2>
+        <div class="card">
+            <div class="badge-lei"><i class="fas fa-dice-d6"></i> Art. 20 – Caixas de recompensa (loot boxes) proibidas em jogos voltados a crianças/adolescentes</div>
+            <p>Mecânicas que oferecem itens aleatórios pagos são vetadas por estimular comportamento similar a jogos de azar. Escolas podem alertar sobre jogos que tentam burlar a regra.</p>
+            <div class="exemplo-card">
+                <strong>🎲 Exemplo concreto:</strong> Um jogo mobile popular entre adolescentes não pode vender "baú surpresa" por R$ 5,00 se a classificação indicativa for livre. A família pode denunciar à autoridade competente.
+            </div>
+            <h4>Redes sociais: vínculo com responsável (art. 24)</h4>
+            <p>Até os 16 anos, a conta da criança/adolescente deve estar vinculada à conta de um dos pais ou responsável. Plataformas devem suspender contas com indícios de idade falsa e oferecer procedimento de recurso.</p>
+            <div class="exemplo-card">
+                <strong>📚 Orientações na escola:</strong> Professores podem conversar com os alunos sobre a importância de usar a idade real e conectar a conta ao responsável, facilitando a supervisão ativa.
+            </div>
+            <h4>Publicidade: proibido impulsionamento com erotização de menores (art. 23)</h4>
+            <p>Vedada a monetização ou impulsionamento de conteúdos que explorem crianças de forma erotizada ou sexualmente sugestiva.</p>
+        </div>
+    </div>
+
+    <!-- ABA 5 - VERIFICAÇÃO DE IDADE -->
+    <div id="idade" class="tab-content">
+        <h2>✅ Mecanismos confiáveis de verificação de idade</h2>
+        <div class="card">
+            <p><strong>Arts. 9º a 14</strong> – Produtos ou serviços com conteúdo impróprio ou proibido para menores de 18 (pornografia, apostas, tabaco, bebidas) devem adotar <strong>verificação de idade robusta</strong>, vedada a autodeclaração. Lojas de aplicativos e sistemas operacionais devem oferecer APIs seguras de sinal de idade.</p>
+            <div class="grid-dois">
+                <div class="exemplo-card">
+                    <strong>🆔 Exemplo:</strong> Um site de notícias que exiba anúncios de casa de apostas ou tenha seção +18 exigirá validação com documento ou biometria, não bastando clicar "tenho mais de 18".
+                </div>
+                <div class="exemplo-card">
+                    <strong>📥 Download de apps:</strong> Crianças e adolescentes só podem baixar aplicativos com consentimento explícito dos pais, sem presunção de autorização (art. 12 §2º).
+                </div>
+            </div>
+            <div class="exemplo-card">
+                <strong>🏫 Proposta para a URE:</strong> Criar um comunicado oficial sobre a importância de verificar a idade real nas plataformas e ativar nas lojas de app a exigência de senha para downloads e compras.
+            </div>
+            <p><strong>Proteção de dados na verificação:</strong> Os dados coletados para verificação de idade não podem ser usados para outras finalidades (art. 13).</p>
+        </div>
+    </div>
+
+    <!-- ABA 6 - DENÚNCIAS E REMOÇÃO RÁPIDA -->
+    <div id="denuncia" class="tab-content">
+        <h2>📢 Remoção de conteúdo violador sem ordem judicial</h2>
+        <div class="card">
+            <p><strong>Art. 29</strong> – As plataformas devem remover imediatamente conteúdos que violem direitos de crianças/adolescentes (exploração, violência, cyberbullying, assédio) ao serem notificadas pela vítima, responsáveis, Ministério Público ou entidades de defesa, <strong>independentemente de ordem judicial</strong>.</p>
+            <div class="exemplo-card">
+                <strong>📌 Situação escolar:</strong> Um aluno sofre divulgação não autorizada de imagem constrangedora em um grupo de WhatsApp. A família pode notificar diretamente o WhatsApp (ou plataforma) com prints e links para remoção em até 24h. A escola acolhe e orienta o fluxo.
+            </div>
+            <h4>Reporte de violações e transparência (arts. 28, 31)</h4>
+            <p>Plataformas com mais de 1 milhão de usuários infantojuvenis devem publicar relatórios semestrais com quantidade de denúncias e moderações.</p>
+            <div class="exemplo-card">
+                <strong>🏫 Ação prática URE:</strong> Criar um cartaz digital com os canais oficiais de denúncia (Disque 100, Conselho Tutelar de Caieiras) e links para reporte direto nas redes sociais. Realizar palestra sobre uso responsável dos canais de denúncia.
+            </div>
+            <p><strong>Arts. 32-33</strong> – Combate ao uso abusivo das denúncias (denúncias falsas). Plataformas devem suspender contas que usarem o instrumento para censura ou perseguição.</p>
+        </div>
+    </div>
+
+    <!-- ABA 7 - ESCOLA NA PRÁTICA: exemplos e ações concretas -->
+    <div id="escola" class="tab-content">
+        <h2>🏫 Guia para educadores e gestores: implementando a Lei 15.211 na rotina</h2>
+        <div class="card">
+            <p>A proteção digital é responsabilidade compartilhada. A URE Caieiras pode mobilizar toda a comunidade escolar com ações simples e efetivas. Reunimos abaixo 7 práticas alinhadas à lei.</p>
+            <div class="grid-dois">
+                <div class="exemplo-card">
+                    <strong>📅 1. Semana da Cidadania Digital</strong> – Oficinas sobre privacidade, limites de tela, identificação de loot boxes e cyberbullying. Alunos produzem cartazes e posts informativos.
+                </div>
+                <div class="exemplo-card">
+                    <strong>📘 2. Contrato digital com as famílias</strong> – Elaborar termo de compromisso onde pais se responsabilizam por ativar a supervisão parental nos dispositivos dos filhos, com base nos arts. 16-18.
+                </div>
+                <div class="exemplo-card">
+                    <strong>🧑‍🏫 3. Formação de professores</strong> – Capacitar docentes para identificar sinais de violência digital, proceder com notificações extrajudiciais (art. 29) e usar ferramentas de moderação.
+                </div>
+                <div class="exemplo-card">
+                    <strong>📱 4. Revisão de apps educacionais</strong> – A URE deve verificar se os contratos com fornecedores (Google Workspace, Khan Academy, etc) garantem a configuração mais protetiva e ausência de perfilamento.
+                </div>
+                <div class="exemplo-card">
+                    <strong>⚠️ 5. Protocolo de denúncia interna</strong> – Criar canal sigiloso (e-mail ou formulário) para alunos reportarem conteúdos abusivos e encaminhar ao Conselho Tutelar e às plataformas.
+                </div>
+                <div class="exemplo-card">
+                    <strong>🎮 6. Oficina sobre jogos eletrônicos</strong> – Explicar a proibição das loot boxes e ensinar a reconhecer compras internas abusivas. Alunos multiplicadores no ensino médio.
+                </div>
+                <div class="exemplo-card">
+                    <strong>📢 7. Mural digital de direitos</strong> – Fixar na entrada da escola e nos grupos de WhatsApp um resumo dos direitos da lei: "Meus dados são meus; publicidade não pode me perfilar; tenho direito à remoção rápida de conteúdos ofensivos."
+                </div>
+            </div>
+            <div class="info-box" style="margin-top: 1.2rem;">
+                <i class="fas fa-gavel"></i> <strong>Sanções importantes (art. 35):</strong> Multas de até 10% do faturamento no Brasil (até R$ 50 milhões), suspensão de atividades e proibição de funcionamento. Empresas estrangeiras precisam ter representante legal no país (art. 40).
+            </div>
+        </div>
+    </div>
+
+    <!-- Card extra com destaques e vigência -->
+    <div class="card" style="background: #ffffff;">
+        <div class="subsection-title"><i class="fas fa-info-circle"></i> Resumo para a comunidade – O que muda na prática?</div>
+        <ul style="margin-left: 1.2rem; line-height: 1.6;">
+            <li>✅ Crianças e adolescentes têm direito a ambientes digitais seguros, com privacidade máxima por padrão.</li>
+            <li>✅ Proibido usar dados de crianças para propaganda direcionada ou criar perfis comportamentais.</li>
+            <li>✅ Redes sociais: menores de 16 anos precisam estar vinculados à conta dos pais.</li>
+            <li>✅ Jogos não podem ter "caixas surpresa" pagas (loot boxes) para esse público.</li>
+            <li>✅ Qualquer pessoa pode notificar plataformas para remoção de conteúdo ofensivo, sem precisar de advogado ou ordem judicial.</li>
+            <li>✅ Verificação de idade real em sites adultos: autodeclaração não vale mais.</li>
+        </ul>
+        <div class="exemplo-card" style="margin-top: 1rem;">
+            <strong><i class="fas fa-calendar-week"></i> Vigência plena: 17 de março de 2026</strong> – A URE - Caieiras já está mobilizada para orientar escolas, professores e famílias sobre seus direitos e deveres no ambiente digital.
+        </div>
+    </div>
+
+    <div class="link-footer">
+        <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15211.htm" target="_blank" class="link-btn" rel="noopener"><i class="fas fa-external-link-alt"></i> Texto completo da Lei 15.211/2025</a>
+        <a href="#" class="link-btn" onclick="window.print();return false;"><i class="fas fa-print"></i> Imprimir guia</a>
+    </div>
+
+    <footer>
+        <i class="fas fa-shield-heart"></i> Unidade Regional de Ensino - Caieiras | Secretaria da Educação | Estatuto Digital da Criança e do Adolescente – Lei 15.211/2025<br>
+        Promovendo cidadania digital, proteção de dados e supervisão consciente em toda a rede escolar.
+    </footer>
+</div>
+
+<script>
+    // Controle de abas
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    function activateTab(tabId) {
+        contents.forEach(c => c.classList.remove('active'));
+        tabs.forEach(b => b.classList.remove('active'));
+        const activeContent = document.getElementById(tabId);
+        if(activeContent) activeContent.classList.add('active');
+        const activeBtn = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if(activeBtn) activeBtn.classList.add('active');
+    }
+
+    tabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            if(tabId) {
+                activateTab(tabId);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Se houver hash na URL, ativa a aba correspondente
+    if(window.location.hash) {
+        const hash = window.location.hash.substring(1);
+        if(['geral','privacidade','parental','jogos','idade','denuncia','escola'].includes(hash)) {
+            activateTab(hash);
+        }
+    }
+</script>
+</body>
+</html>
